@@ -1,0 +1,17 @@
+createCandidate:
+  handler: src/services/create.main
+  name: dev-create-candidate
+  description: Create candidate
+  events:
+    - http:
+        path: candidates
+        method: post
+  
+getCandidate:
+  handler: src/services/get.main
+  name: dev-get-candidate
+  description: Get candidate
+  events:
+    - http:
+        path: candidates
+        method: get

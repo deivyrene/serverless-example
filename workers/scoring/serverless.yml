@@ -1,0 +1,23 @@
+service: scoring
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-west-2
+
+custom:
+  serverless-offline-sns:
+    port: 3001
+    debug: false
+    host: 127.0.0.1
+    accountId: idAws
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline-sns
+  - serverless-offline
+  - serverless-plugin-include-dependencies
+  - serverless-prune-plugin
+
+functions: ${file(./sls-functions.yml)}

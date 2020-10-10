@@ -1,0 +1,13 @@
+updateScoringCandidate:
+  handler: src/services/update-scoring.main
+  name: dev-scoring-candidate
+  description: Updates scoring to candidate
+  events:
+    - sns: new-event
+
+saveData:
+  handler: src/services/save-data.main
+  name: dev-save-data
+  description: Data scoring to candidate
+  events:
+    - sns: new-event

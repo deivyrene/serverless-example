@@ -1,0 +1,15 @@
+service: candidate
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-west-2
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-plugin-include-dependencies
+  - serverless-prune-plugin
+
+functions: ${file(./sls-functions.yml)}
